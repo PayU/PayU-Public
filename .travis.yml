@@ -3,4 +3,5 @@ jdk:
       - oraclejdk8
       - oraclejdk7
 
-script: mvn install
+install: true
+script: mvn -e -B -V verify -Pnexus
