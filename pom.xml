@@ -19,7 +19,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.payu</groupId>
-    <artifactId>public-payu</artifactId>
+    <artifactId>payu-public</artifactId>
     <version>1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -50,6 +50,12 @@
             <id>sjaranowski</id>
             <name>Slawomir Jaranowski</name>
             <email>slawomir.jaranowski@payu.pl</email>
+            <timezone>Europe/Warsaw</timezone>
+        </developer>
+        <developer>
+            <id>pligeza</id>
+            <name>Piotr Ligeza</name>
+            <email>piotr.ligeza@payu.pl</email>
             <timezone>Europe/Warsaw</timezone>
         </developer>
     </developers>
