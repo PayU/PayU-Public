@@ -1,4 +1,8 @@
-# PayU Public Super POM. [![Build Status](https://travis-ci.org/PayU-Tech/PayU-Public.svg?branch=master)](https://travis-ci.org/PayU-Tech/PayU-Public)
+# PayU Public Super POM.
+
+[![Build Status](https://travis-ci.org/PayU-Tech/PayU-Public.svg?branch=master)](https://travis-ci.org/PayU-Tech/PayU-Public)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.payu/payu-public/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.payu/payu-public)
+
 
 Root file of all public PayU maven builds.
 It contains common configuration inherited by all public PayU maven projects.
