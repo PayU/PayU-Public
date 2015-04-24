@@ -44,6 +44,8 @@
                     <consoleOutput>true</consoleOutput>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     <linkXRef>false</linkXRef>
+                    <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                    <testSourceDirectory>${project.build.testSourceDirectory}</testSourceDirectory>
                 </configuration>
                 <dependencies>
                     <dependency>
