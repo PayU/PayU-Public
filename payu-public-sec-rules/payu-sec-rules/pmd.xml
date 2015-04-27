@@ -21,14 +21,23 @@
     <description>custom rules config for S4U</description>
     <exclude-pattern>.*/target/.*</exclude-pattern>
 
-    <rule ref="rulesets/java/basic.xml"/>
+    <rule ref="rulesets/java/basic.xml">
+        <exclude name="AvoidBranchingStatementAsLastInLoop"/>
+    </rule>
     <rule ref="rulesets/java/braces.xml"/>
     <rule ref="rulesets/java/clone.xml"/>
     <rule ref="rulesets/java/codesize.xml"/>
+    <rule ref="rulesets/java/codesize.xml/TooManyMethods">
+        <properties>
+            <property name="maxmethods" value="16"/>
+        </properties>
+    </rule>
     <rule ref="rulesets/java/controversial.xml/DontImportSun"/>
     <rule ref="rulesets/java/controversial.xml/DoNotCallGarbageCollectionExplicitly"/>
     <rule ref="rulesets/java/controversial.xml/OneDeclarationPerLine"/>
     <rule ref="rulesets/java/design.xml">
+        <exclude name="AccessorClassGeneration"/>
+        <exclude name="AvoidSynchronizedAtMethodLevel"/>
         <exclude name="ConfusingTernary"/>
         <exclude name="UncommentedEmptyConstructor"/>
         <exclude name="UncommentedEmptyMethod"/>
@@ -43,13 +52,16 @@
         </properties>
     </rule>
     <rule ref="rulesets/java/logging-java.xml"/>
-    <rule ref="rulesets/java/migrating.xml"/>
+    <rule ref="rulesets/java/migrating.xml">
+        <exclude name="JUnit4TestShouldUseTestAnnotation"/>
+    </rule>
     <rule ref="rulesets/java/optimizations.xml">
         <exclude name="MethodArgumentCouldBeFinal"/>
         <exclude name="LocalVariableCouldBeFinal"/>
     </rule>
     <rule ref="rulesets/java/strictexception.xml">
         <exclude name="AvoidRethrowingException"/>
+        <exclude name="AvoidThrowingNullPointerException"/>
     </rule>
     <rule ref="rulesets/java/strings.xml"/>
     <rule ref="rulesets/java/sunsecure.xml"/>
