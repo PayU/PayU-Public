@@ -19,7 +19,7 @@
 
     <groupId>com.payu</groupId>
     <artifactId>payu-public-root</artifactId>
-    <version>2</version>
+    <version>3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>PayU Public Super POM - Root</name>
@@ -76,7 +76,7 @@
         <connection>scm:git:git@github.com:PayU-Tech/Payu-Public.git</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
         <url>https://github.com/PayU-Tech/Payu-Public</url>
-        <tag>payu-public-root-2</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>

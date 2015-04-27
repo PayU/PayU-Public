@@ -21,7 +21,7 @@
     <parent>
         <artifactId>payu-public-root</artifactId>
         <groupId>com.payu</groupId>
-        <version>2</version>
+        <version>3-SNAPSHOT</version>
     </parent>
 
     <artifactId>payu-public-sec-rules</artifactId>
