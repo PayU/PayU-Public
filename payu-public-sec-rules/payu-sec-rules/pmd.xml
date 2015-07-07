@@ -40,7 +40,7 @@
         <exclude name="AvoidSynchronizedAtMethodLevel"/>
         <exclude name="ConfusingTernary"/>
         <exclude name="UncommentedEmptyConstructor"/>
-        <exclude name="UncommentedEmptyMethod"/>
+        <exclude name="UncommentedEmptyMethodBody"/>
         <exclude name="UseVarargs"/>
     </rule>
     <rule ref="rulesets/java/empty.xml"/>
