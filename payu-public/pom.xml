@@ -21,7 +21,7 @@
     <parent>
         <artifactId>payu-public-root</artifactId>
         <groupId>com.payu</groupId>
-        <version>3-SNAPSHOT</version>
+        <version>3</version>
     </parent>
 
     <artifactId>payu-public</artifactId>
@@ -49,7 +49,7 @@
                     <dependency>
                         <groupId>com.payu</groupId>
                         <artifactId>payu-public-sec-rules</artifactId>
-                        <version>3-SNAPSHOT</version>
+                        <version>3</version>
                     </dependency>
                 </dependencies>
                 <executions>
@@ -76,7 +76,7 @@
                     <dependency>
                         <groupId>com.payu</groupId>
                         <artifactId>payu-public-sec-rules</artifactId>
-                        <version>3-SNAPSHOT</version>
+                        <version>3</version>
                     </dependency>
                 </dependencies>
                 <executions>
