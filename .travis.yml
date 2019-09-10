@@ -1,13 +1,14 @@
 language: java
 jdk:
-    - oraclejdk8
+    - openjdk8
 
 install: true
 script:
     - export IS_RELEASE=`git log -1 --pretty=%s | grep "\[maven-release-plugin\] prepare release"`
+    - echo "IS_RELEASE=$IS_RELEASE TRAVIS_PULL_REQUEST=$TRAVIS_PULL_REQUEST TRAVIS_BRANCH=$TRAVIS_BRANCH TRAVIS_REPO_SLUG=$TRAVIS_REPO_SLUG"
     -
         if [ -z "$TRAVIS_TAG" -a -z "$IS_RELEASE" ]; then
-            if [ "$TRAVIS_PULL_REQUEST" = "false" -a "$TRAVIS_BRANCH" = "master" ]; then
+            if [ "$TRAVIS_PULL_REQUEST" = "false" -a "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_REPO_SLUG" = "PayU/PayU-Public" ]; then
                 $_MVN deploy;
             else
                 $_MVN install;

@@ -1,6 +1,6 @@
 # PayU Public Super POM.
 
-[![Build Status](https://travis-ci.org/PayU-Tech/PayU-Public.svg?branch=master)](https://travis-ci.org/PayU-Tech/PayU-Public)
+[![Build Status](https://travis-ci.com/PayU/PayU-Public.svg?branch=master)](https://travis-ci.com/PayU/PayU-Public)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.payu/payu-public/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.payu/payu-public)
 
 
