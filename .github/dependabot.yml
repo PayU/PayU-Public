@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: maven
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: net.sourceforge.pmd:pmd-core
+    versions:
+    - 6.30.0
+    - 6.31.0
+    - 6.32.0
+    - 6.33.0
