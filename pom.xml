@@ -68,7 +68,7 @@
         <maven.compiler.optimize>true</maven.compiler.optimize>
         <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
         <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
-        <pmd.version>5.3.2</pmd.version>
+        <pmd.version>6.36.0</pmd.version>
     </properties>
 
     <scm>
