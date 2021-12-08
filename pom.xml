@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ Copyright 2015 PayU
+  ~ Copyright 2021 PayU
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -18,20 +18,19 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.payu</groupId>
-    <artifactId>payu-public-root</artifactId>
+    <artifactId>payu-public</artifactId>
     <version>4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>PayU Public Super POM - Root</name>
-    <description>
-        Root file of all public PayU maven builds.
-        It contains common configuration inherited by all public PayU maven projects.
-    </description>
-    <url>https://github.com/PayU-Tech/Payu-Public</url>
+    <name>PayU Public Super POM</name>
+
+    <description>Common configuration inherited by all PayU public maven projects.</description>
+
+    <url>https://github.com/PayU/Payu-Public</url>
 
     <organization>
         <name>PayU</name>
-        <url>http://www.payu.com</url>
+        <url>https://www.payu.com</url>
     </organization>
 
     <inceptionYear>2015</inceptionYear>
@@ -39,7 +38,7 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -51,57 +50,40 @@
             <email>slawomir.jaranowski@payu.pl</email>
             <timezone>Europe/Warsaw</timezone>
         </developer>
-        <developer>
-            <id>pligeza</id>
-            <name>Piotr Ligeza</name>
-            <email>piotr.ligeza@payu.pl</email>
-            <timezone>Europe/Warsaw</timezone>
-        </developer>
     </developers>
 
     <properties>
         <nexus.url>https://oss.sonatype.org</nexus.url>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.optimize>true</maven.compiler.optimize>
         <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
         <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
-        <pmd.version>5.3.2</pmd.version>
     </properties>
 
     <scm>
-        <connection>scm:git:git@github.com:PayU-Tech/Payu-Public.git</connection>
+        <connection>scm:git:git@github.com:PayU/Payu-Public.git</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
-        <url>https://github.com/PayU-Tech/Payu-Public</url>
+        <url>https://github.com/PayU/Payu-Public</url>
         <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
         <repository>
-            <id>sonatype-nexus</id>
+            <id>payu-sonatype-nexus</id>
             <name>Nexus Release Repository</name>
             <url>${nexus.url}/service/local/staging/deploy/maven2/</url>
         </repository>
         <snapshotRepository>
-            <id>sonatype-nexus</id>
+            <id>payu-sonatype-nexus</id>
             <name>Sonatype Nexus Snapshots</name>
             <url>${nexus.url}/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
-    <prerequisites>
-        <maven>3.0.5</maven>
-    </prerequisites>
-
-    <modules>
-        <module>payu-public</module>
-        <module>payu-public-sec-rules</module>
-    </modules>
-
     <build>
-
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -118,15 +100,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.1</version>
-                    <configuration>
-                        <source>${maven.compiler.source}</source>
-                        <target>${maven.compiler.target}</target>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>3.1.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -160,18 +133,6 @@
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-pmd-plugin</artifactId>
-                    <version>3.5</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>net.sourceforge.pmd</groupId>
-                            <artifactId>pmd-core</artifactId>
-                            <version>${pmd.version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>3.0.0</version>
                 </plugin>
@@ -182,7 +143,7 @@
                     <configuration>
                         <preparationGoals>clean</preparationGoals>
                         <goal>deploy</goal>
-                        <releaseProfiles>release,nexus</releaseProfiles>
+                        <releaseProfiles>release</releaseProfiles>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -214,11 +175,20 @@
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>1.6.8</version>
+                    <configuration>
+                        <serverId>payu-sonatype-nexus</serverId>
+                        <nexusUrl>${nexus.url}</nexusUrl>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <extensions>true</extensions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
@@ -261,7 +231,6 @@
                 </executions>
             </plugin>
         </plugins>
-
     </build>
 
     <profiles>
@@ -281,22 +250,6 @@
                                 </goals>
                             </execution>
                         </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>nexus</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <serverId>sonatype-nexus</serverId>
-                            <nexusUrl>${nexus.url}</nexusUrl>
-                        </configuration>
                     </plugin>
                 </plugins>
             </build>
